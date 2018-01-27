@@ -1,0 +1,20 @@
+--- jira/conf/server.xml.orig	2018-01-11 06:58:48.000000000 -0500
++++ jira/conf/server.xml	2018-01-26 19:46:00.633642000 -0500
+@@ -50,7 +50,7 @@
+     -->
+     <Service name="Catalina">
+ 
+-        <Connector port="8080"
++        <Connector port="${port.http}"
+ 
+                    maxThreads="150"
+                    minSpareThreads="25"
+@@ -113,7 +113,7 @@
+         -->
+ 
+         <Engine name="Catalina" defaultHost="localhost">
+-            <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true">
++            <Host name="localhost" appBase="${appbase.dir}" unpackWARs="true" autoDeploy="true" workDir="${work.dir}">
+ 
+                 <Context path="" docBase="${catalina.home}/atlassian-jira" reloadable="false" useHttpOnly="true">
+ 

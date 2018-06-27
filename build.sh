@@ -6,10 +6,7 @@ JIRA_DOWNLOAD_URI="https://www.atlassian.com/software/jira/downloads/binary"
 JIRA_DL_ARCHIVE="atlassian-jira-software-${JIRA_VERSION}.tar.gz"
 
 # Server Optimized JRE
-JRE_DOWNLOAD_URI="http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/server-jre-8u161-linux-x64.tar.gz"
-
-# Standard JRE
-#JRE_DOWNLOAD_URI="http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jre-8u161-linux-x64.tar.gz"
+JRE_DOWNLOAD_URI="http://download.oracle.com/otn-pub/java/jdk/8u172-b11/a58eab1ec242421181065cdc37240b08/server-jre-8u172-linux-x64.tar.gz"
 
 # Make directories
 mkdir -p ${PLATFORM_APP_DIR}/jira;

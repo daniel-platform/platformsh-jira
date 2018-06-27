@@ -1,5 +1,5 @@
 --- jira/conf/server.xml.orig	2018-01-11 06:58:48.000000000 -0500
-+++ jira/conf/server.xml	2018-01-26 19:46:00.633642000 -0500
++++ jira/conf/server.xml	2018-01-27 04:38:10.188567000 -0500
 @@ -50,7 +50,7 @@
      -->
      <Service name="Catalina">
@@ -9,7 +9,17 @@
  
                     maxThreads="150"
                     minSpareThreads="25"
-@@ -113,7 +113,7 @@
+@@ -59,6 +59,9 @@
+                    enableLookups="false"
+                    maxHttpHeaderSize="8192"
+                    protocol="HTTP/1.1"
++                   scheme="${http.scheme}"
++                   proxyPort="${proxy.port}"
++                   proxyName="${proxy.name}"
+                    useBodyEncodingForURI="true"
+                    redirectPort="8443"
+                    acceptCount="100"
+@@ -113,7 +116,7 @@
          -->
  
          <Engine name="Catalina" defaultHost="localhost">

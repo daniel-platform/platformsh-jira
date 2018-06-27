@@ -1,6 +1,6 @@
 #!/bin/bash
 
-JIRA_VERSION=7.7.1
+JIRA_VERSION=7.10.2
 
 JIRA_DOWNLOAD_URI="https://www.atlassian.com/software/jira/downloads/binary"
 JIRA_DL_ARCHIVE="atlassian-jira-software-${JIRA_VERSION}.tar.gz"

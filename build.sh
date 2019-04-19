@@ -1,12 +1,15 @@
 #!/bin/bash
 
-JIRA_VERSION=7.10.2
+JIRA_VERSION=8.1.0
 
 JIRA_DOWNLOAD_URI="https://www.atlassian.com/software/jira/downloads/binary"
 JIRA_DL_ARCHIVE="atlassian-jira-software-${JIRA_VERSION}.tar.gz"
 
 # Server Optimized JRE
-JRE_DOWNLOAD_URI="http://download.oracle.com/otn-pub/java/jdk/8u172-b11/a58eab1ec242421181065cdc37240b08/server-jre-8u172-linux-x64.tar.gz"
+if [ -z "$JRE_DOWNLOAD_URI" ]; then 
+	# Default (Note this work on JIRA 8+)
+	JRE_DOWNLOAD_URI="https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u212-b03/OpenJDK8U-jre_x64_linux_hotspot_8u212b03.tar.gz"; 
+fi
 
 # Make directories
 mkdir -p ${PLATFORM_APP_DIR}/jira;

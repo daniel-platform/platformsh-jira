@@ -1,28 +1,28 @@
---- jira/conf/server.xml.orig	2018-06-27 13:06:27.675037000 -0400
-+++ jira/conf/server.xml	2018-06-27 13:06:17.524763000 -0400
-@@ -30,11 +30,13 @@
-          If using a http/https proxy, comment out this connector.
-          ==============================================================================================================
+--- jira/conf/server.xml.orig	2019-04-19 12:20:34.929307000 -0400
++++ jira/conf/server.xml	2019-04-19 12:24:42.974464000 -0400
+@@ -32,11 +32,14 @@
          -->
--
-+        
-+        <!--
-         <Connector port="8080" maxThreads="150" minSpareThreads="25" connectionTimeout="20000" enableLookups="false"
+ 
+         <!-- Relaxing chars because of JRASERVER-67974 -->
++		<!--
+         <Connector port="8080" relaxedPathChars="[]|" relaxedQueryChars="[]|{}^&#x5c;&#x60;&quot;&lt;&gt;"
+                    maxThreads="150" minSpareThreads="25" connectionTimeout="20000" enableLookups="false"
                     maxHttpHeaderSize="8192" protocol="HTTP/1.1" useBodyEncodingForURI="true" redirectPort="8443"
                     acceptCount="100" disableUploadTimeout="true" bindOnInit="false"/>
--
-+        -->
-+        
+ 
++		-->
++
          <!--
           ==============================================================================================================
           HTTP - Proxying Jira via Apache or Nginx over HTTP
-@@ -70,12 +72,10 @@
+@@ -73,13 +76,11 @@
           ==============================================================================================================
          -->
  
 -        <!--
--        <Connector port="8080" maxThreads="150" minSpareThreads="25" connectionTimeout="20000" enableLookups="false"
-+        <Connector port="${port.http}" maxThreads="150" minSpareThreads="25" connectionTimeout="20000" enableLookups="false"
+-        <Connector port="8080" relaxedPathChars="[]|" relaxedQueryChars="[]|{}^&#x5c;&#x60;&quot;&lt;&gt;"
++        <Connector port="${port.http}" relaxedPathChars="[]|" relaxedQueryChars="[]|{}^&#x5c;&#x60;&quot;&lt;&gt;"
+                    maxThreads="150" minSpareThreads="25" connectionTimeout="20000" enableLookups="false"
                     maxHttpHeaderSize="8192" protocol="HTTP/1.1" useBodyEncodingForURI="true" redirectPort="8443"
 -                   acceptCount="100" disableUploadTimeout="true" bindOnInit="false" secure="true" scheme="https"
 -                   proxyName="<subdomain>.<domain>.com" proxyPort="443"/>
@@ -32,7 +32,7 @@
  
          <!--
           ==============================================================================================================
-@@ -93,7 +93,7 @@
+@@ -97,7 +98,7 @@
          -->
  
          <Engine name="Catalina" defaultHost="localhost">

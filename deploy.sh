@@ -6,7 +6,7 @@
 # Extract database configuration from enviroment
 export JIRA_DB_PATH=$(bin/discovery PLATFORM_RELATIONSHIPS jiradb.jiradb.path)
 export JIRA_DB_PORT=$(bin/discovery PLATFORM_RELATIONSHIPS jiradb.jiradb.port)
-export JIRA_DB_USER=$(bin/jsondiscovery_env PLATFORM_RELATIONSHIPS jiradb.jiradb.username)
+export JIRA_DB_USER=$(bin/discovery PLATFORM_RELATIONSHIPS jiradb.jiradb.username)
 export JIRA_DB_PASS=$(bin/discovery PLATFORM_RELATIONSHIPS jiradb.jiradb.password)
 export JIRA_DB_HOST=$(bin/discovery PLATFORM_RELATIONSHIPS jiradb.jiradb.host)
 

@@ -24,6 +24,6 @@ In order to decode relationship and route information from enviroment
 variables, this project uses the following pre-built (Debian) binaries 
 located in the `bin` folder.
 
-- json_env: https://github.com/daniel-platform/relationship-explorer
-- routes: https://github.com/daniel-platform/route-lookup
+- discovery: https://github.com/daniel-platform/discovery
+- pathfinder: https://github.com/daniel-platform/pathfinder
 

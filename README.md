@@ -1,6 +1,6 @@
 # JIRA on Platform.sh
 
-Automaticly deploys a fully function copy of JIRA (currently at version 8.1.0) on 
+Automaticly deploys a fully function copy of JIRA (currently at version 8.2.4) on 
 Platform.sh
 
 ## Requirements
